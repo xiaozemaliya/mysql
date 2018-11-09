@@ -1,0 +1,11 @@
+select distinct JOB_ID from employees;
+select * from employees where EMPLOYEE_ID=206;
+select * from employees order by EMPLOYEE_ID desc;
+select * from employees order by EMPLOYEE_ID limit 1,3;
+select sum(SALARY),sum(DEPARTMENT_ID) from employees;
+select count(LAST_NAME) from employees;
+select MANAGER_ID,sum(MANAGER_ID),max(MANAGER_ID),SALARY from employees group by MANAGER_ID,SALARY;
+select Min_SALARY,SALARY from jobs,employees where jobs.Min_SALARY=employees.SALARY ;
+select MIN_SALARY,SALARY from jobs left join employees on jobs.MIN_SALARY=employees.SALARY;
+select * from jobs where exists (select SALARY from employees where SALARY=6000);
+select  JOB_ID  from jobs union all select DEPARTMENT_ID from employees;
